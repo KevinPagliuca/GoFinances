@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { CardType } from '.';
+import { HightlightCardType } from '.';
 
 interface TypeProps {
-  type: CardType;
+  type: HightlightCardType;
 }
 
 const iconColor = {

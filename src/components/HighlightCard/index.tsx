@@ -1,12 +1,12 @@
 import React from 'react';
 import * as S from './styles';
 
-export type CardType = 'income' | 'outcome' | 'total';
+export type HightlightCardType = 'income' | 'outcome' | 'total';
 
 interface HighlightCardProps {
   amount: string;
   lastTransaction: string;
-  type: CardType;
+  type: HightlightCardType;
 }
 
 const icon = {
@@ -20,7 +20,7 @@ export const HighlightCard = ({
   amount,
   lastTransaction,
 }: HighlightCardProps) => {
-  const generateTitle = (type: CardType) => {
+  const generateTitle = (type: HightlightCardType) => {
     switch (type) {
       case 'income':
         return 'Entradas';
