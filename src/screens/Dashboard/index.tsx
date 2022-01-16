@@ -19,9 +19,21 @@ export const Dashboard = () => {
         </S.UserWrapper>
       </S.Header>
       <S.HighlightCardsContainer>
-        <HighlightCard type="income" />
-        <HighlightCard type="income" />
-        <HighlightCard type="income" />
+        <HighlightCard
+          type="income"
+          amount="R$ 17.400,00"
+          lastTransaction="Última entrada dia 13 de abril"
+        />
+        <HighlightCard
+          type="outcome"
+          amount="R$ 17.400,00"
+          lastTransaction="Última entrada dia 13 de abril"
+        />
+        <HighlightCard
+          type="total"
+          amount="R$ 17.400,00"
+          lastTransaction="Última entrada dia 13 de abril"
+        />
       </S.HighlightCardsContainer>
     </S.Container>
   );

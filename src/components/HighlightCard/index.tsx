@@ -1,12 +1,25 @@
 import React from 'react';
 import * as S from './styles';
 
-type CardType = 'income' | 'outcome' | 'total';
+export type CardType = 'income' | 'outcome' | 'total';
 
 interface HighlightCardProps {
+  amount: string;
+  lastTransaction: string;
   type: CardType;
 }
-export const HighlightCard = ({ type = 'income' }: HighlightCardProps) => {
+
+const icon = {
+  income: 'arrow-up-circle',
+  outcome: 'arrow-down-circle',
+  total: 'dollar-sign',
+};
+
+export const HighlightCard = ({
+  type = 'income',
+  amount,
+  lastTransaction,
+}: HighlightCardProps) => {
   const generateTitle = (type: CardType) => {
     switch (type) {
       case 'income':
@@ -19,16 +32,17 @@ export const HighlightCard = ({ type = 'income' }: HighlightCardProps) => {
         return '';
     }
   };
+
   return (
-    <S.Container>
+    <S.Container type={type}>
       <S.Header>
-        <S.Title>{generateTitle(type)}</S.Title>
-        <S.Icon name="arrow-up-circle" />
+        <S.Title type={type}>{generateTitle(type)}</S.Title>
+        <S.Icon name={icon[type]} type={type} />
       </S.Header>
 
       <S.ContentContainer>
-        <S.Amount>R$ 17.400,00</S.Amount>
-        <S.LastTransaction>Última entrada dia 13 de abril</S.LastTransaction>
+        <S.Amount type={type}>{amount}</S.Amount>
+        <S.LastTransaction type={type}>{lastTransaction}</S.LastTransaction>
       </S.ContentContainer>
     </S.Container>
   );
