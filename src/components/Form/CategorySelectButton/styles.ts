@@ -1,12 +1,13 @@
 import styled, { css } from 'styled-components/native';
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { RectButton } from 'react-native-gesture-handler';
 
 interface CategoryTextProps {
   hasText: boolean;
 }
 
-export const Container = styled.TouchableOpacity.attrs({
+export const Container = styled(RectButton).attrs({
   activityOpacity: 0.7,
 })`
   ${({ theme }) => css`
