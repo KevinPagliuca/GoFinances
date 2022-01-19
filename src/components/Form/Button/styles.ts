@@ -3,7 +3,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { css } from 'styled-components/native';
 
 export const Container = styled(RectButton).attrs({
-  activityOpacity: 0.7,
+  rippleColor: 'rgba(0, 0, 0, 0.1)',
 })`
   ${({ theme }) => css`
     width: 100%;

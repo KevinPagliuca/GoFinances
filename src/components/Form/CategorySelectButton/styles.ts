@@ -8,7 +8,7 @@ interface CategoryTextProps {
 }
 
 export const Container = styled(RectButton).attrs({
-  activityOpacity: 0.7,
+  rippleColor: 'rgba(0, 0, 0, 0.1)',
 })`
   ${({ theme }) => css`
     flex-direction: row;

@@ -1,8 +1,9 @@
-import styled, { css } from "styled-components/native";
-import { Feather } from "@expo/vector-icons";
-import { RFValue } from "react-native-responsive-fontsize";
-import { TransactionTypeButtonType } from ".";
-import { RectButton } from "react-native-gesture-handler";
+import styled, { css } from 'styled-components/native';
+import { Feather } from '@expo/vector-icons';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { TransactionTypeButtonType } from '.';
+
+import { RectButton } from 'react-native-gesture-handler';
 
 type TransactionTypeProps = {
   type: TransactionTypeButtonType;
@@ -25,7 +26,7 @@ export const Container = styled.View<ContainerProps>`
 
     ${isActive &&
     css`
-      background-color: ${type === "income"
+      background-color: ${type === 'income'
         ? theme.colors.success_light
         : theme.colors.attention_light};
       border-width: 0;
@@ -33,7 +34,9 @@ export const Container = styled.View<ContainerProps>`
   `}
 `;
 
-export const ContentContainer = styled(RectButton)`
+export const ContentContainer = styled(RectButton).attrs({
+  rippleColor: 'rgba(0, 0, 0, 0.1)',
+})`
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -44,7 +47,7 @@ export const Icon = styled(Feather)<TransactionTypeProps>`
   font-size: ${RFValue(24)}px;
   margin-right: 12px;
   color: ${({ type, theme }) => css`
-    ${type === "income" ? theme.colors.success : theme.colors.attention}
+    ${type === 'income' ? theme.colors.success : theme.colors.attention}
   `};
 `;
 
